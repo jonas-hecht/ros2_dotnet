@@ -1,0 +1,23 @@
+{
+	"name": "ROS2 Foxy",
+	"build": {
+		"dockerfile": "../Dockerfile",
+		"context": ".."
+	},
+	"workspaceFolder": "/workspace",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.shell.linux": "/bin/bash"
+			}
+		}
+	},
+	"runArgs": [
+		"--network=host",
+		"--cap-add=SYS_PTRACE",
+		"--security-opt=seccomp=unconfined"
+	],
+	"postCreateCommand": "bash -c 'source /opt/ros/foxy/setup.bash && echo \"source /opt/ros/foxy/setup.bash\" >> ~/.bashrc'",
+	"remoteUser": "root"
+}

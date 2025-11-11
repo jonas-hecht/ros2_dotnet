@@ -85,7 +85,7 @@ colcon build --merge-install
 
 Linux
 -----
-Assuming ROS2 foxy installed to the standard location, run the following commands:
+Assuming ROS2 foxy installed to the standard location (or use the provided devcontainer config), run the following commands:
 ```
 source /opt/ros/foxy/setup.bash
 mkdir -p ~/ros2_dotnet_ws/src
